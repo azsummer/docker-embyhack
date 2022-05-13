@@ -34,7 +34,7 @@ server {
 	}
 	location /admin/service/registration/validateDevice {
 		default_type application/json;
-	return 200 '{"cacheExpirationDays": 7,"message": "Device Valid","resultCode": "GOOD"}';
+	return 200 '{cacheExpirationDays: 365, resultCode: "GOOD", message: "Device Valid (limit not checked)"}';
 	}
 	location /admin/service/registration/validate {
 		default_type application/json;
@@ -42,7 +42,7 @@ server {
 	}
 	location /admin/service/registration/getStatus {
 		default_type application/json;
-	return 200 '{"deviceStatus":"","planType":"","subscriptions":{}}';
+	return 200 '{"deviceStatus":0,"planType":"Lifetime","subscriptions":[]}';
 	}
 
 }
